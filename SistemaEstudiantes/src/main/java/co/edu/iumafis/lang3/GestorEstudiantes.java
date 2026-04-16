@@ -1,0 +1,72 @@
+package co.edu.iumafis.lang3;
+
+import java.util.ArrayList;
+
+public class GestorEstudiantes {
+
+    // Lista interna de objetos Estudiante
+    private ArrayList<Estudiante> lista = new ArrayList<>();
+
+    // ── AGREGAR ────────────────────────────────────────────────────
+    public void agregar(Estudiante e) {
+        lista.add(e);
+        System.out.println("✓ Agregado: " + e.getNombre());
+    }
+
+    // ── LISTAR TODOS ───────────────────────────────────────────────
+    public void listar() {
+        if (lista.isEmpty()) {
+            System.out.println("  (lista vacía)");
+            return;
+        }
+        System.out.println("Código | Nombre          | Sem | Prom | Estado");
+        System.out.println("─".repeat(55));
+        for (Estudiante e : lista) {
+            System.out.println(e);
+        }
+        System.out.println("Total: " + lista.size() + " estudiante(s)");
+    }
+
+    public Estudiante buscarPorCodigo(int codigo) {
+        for (Estudiante e : lista) {
+            if (e.getCodigo() == codigo) {
+                return e;
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<Estudiante> obtenerAprobados() {
+        ArrayList<Estudiante> resultado = new ArrayList<>();
+        for (Estudiante e : lista) {
+            if (e.getPromedio() >= 3.0 && e.isActivo()) {
+                resultado.add(e);
+            }
+        }
+        return resultado;
+    }
+
+    
+    public double promedioGeneral() {
+        if (lista.isEmpty()) {
+            return 0.0;
+        }
+        double suma = 0.0;
+        for (Estudiante e : lista) {
+            suma += e.getPromedio();
+        }
+        return suma / lista.size();
+    }
+
+    
+    public boolean eliminar(int codigo) {
+        Estudiante encontrado = buscarPorCodigo(codigo);
+        if (encontrado != null) {
+            lista.remove(encontrado);
+            System.out.println("✓ Eliminado: " + encontrado.getNombre());
+            return true;
+        }
+        System.out.println("✗ Código " + codigo + " no encontrado");
+        return false;
+    }
+}
