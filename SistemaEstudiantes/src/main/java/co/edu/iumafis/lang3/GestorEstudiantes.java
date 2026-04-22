@@ -69,4 +69,26 @@ public class GestorEstudiantes {
         System.out.println("✗ Código " + codigo + " no encontrado");
         return false;
     }
+
+    public void reportePorSemestre(int semestre) {
+    int contador = 0;
+    double suma = 0;
+
+    for (Estudiante estudiante : lista) {
+        if (estudiante.getSemestre() == semestre) {
+            System.out.println(estudiante);
+
+            suma += estudiante.getPromedio(); // o la nota que manejes
+            contador++;
+        }
+    }
+
+    if (contador == 0) {
+        System.out.println("No hay estudiantes en ese semestre");
+    } else {
+        double promedioGrupal = suma / contador;
+        System.out.println("Cantidad de estudiantes: " + contador);
+        System.out.println("Promedio grupal: " + promedioGrupal);
+    }
+}
 }

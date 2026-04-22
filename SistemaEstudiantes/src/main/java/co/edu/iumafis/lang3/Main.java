@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    //public static void main(String[] args) {
+    public static void main(String[] args) {
         /* String nombre = "Tomas Diaz";
         int codigo = 1035225662;
         //int semestre = 5;
@@ -218,6 +218,7 @@ public class Main {
 
 //import java.util.ArrayList;
 
+
 //public class Main {
 
     public static void main(String[] args) {
@@ -252,9 +253,34 @@ public class Main {
         System.out.printf("%n=== ESTADÍSTICAS ===%n");
         System.out.printf("Promedio general del grupo: %.2f%n", gestor.promedioGeneral());
         System.out.println("Aprobados: " + aprobados.size() + "/" + 5);
-    */
     
+        
+        System.out.println("=== reporte semestre ===");
+        gestor.reportePorSemestre(5);
     }
+*/
+    Docente docente = new Docente("Carlos", 223);
+        Estudiante e1 = new Estudiante("Ana", 5,4, 4.5,true );
+        Estudiante e2 = new Estudiante("Luis", 5, 3, 3.8, true);
+        Estudiante e3 = new Estudiante("Sofia", 5, 6, 4.9, true);
+
+        docente.asignarEstudiante(e1);
+        docente.asignarEstudiante(e2);
+        docente.asignarEstudiante(e3);
+
+        docente.listarGrupo();
+
+        Estudiante mejor = docente.mejorEstudiante();
+
+        if (mejor != null) {
+            System.out.println("Mejor estudiante:");
+            System.out.println(mejor);
+        } else {
+            System.out.println("No hay estudiantes");
+        }
+    }
+}
+
 
     
 
