@@ -3,6 +3,7 @@
  */
 package co.edu.iumafis.lang3;
 
+
 import java.util.ArrayList;
 
 public class Main {
@@ -216,12 +217,13 @@ public class Main {
         
     //package co.edu.iumafis.lang3;
 
-//import java.util.ArrayList;
+ //import java.util.ArrayList;
+  */
 
 
-//public class Main {
+ //public class Main {
 
-    public static void main(String[] args) {
+   // public static void main(String[] args) {
 
         GestorEstudiantes gestor = new GestorEstudiantes();
 
@@ -257,9 +259,9 @@ public class Main {
         
         System.out.println("=== reporte semestre ===");
         gestor.reportePorSemestre(5);
-    }
-*/
-    Docente docente = new Docente("Carlos", 223);
+     }
+      
+     /*Docente docente = new Docente("Carlos", 223);
         Estudiante e1 = new Estudiante("Ana", 5,4, 4.5,true );
         Estudiante e2 = new Estudiante("Luis", 5, 3, 3.8, true);
         Estudiante e3 = new Estudiante("Sofia", 5, 6, 4.9, true);
@@ -278,8 +280,9 @@ public class Main {
         } else {
             System.out.println("No hay estudiantes");
         }
+*/
     }
-}
+
 
 
     

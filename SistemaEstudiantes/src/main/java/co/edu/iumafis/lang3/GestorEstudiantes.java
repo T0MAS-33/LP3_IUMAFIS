@@ -89,6 +89,14 @@ public class GestorEstudiantes {
         double promedioGrupal = suma / contador;
         System.out.println("Cantidad de estudiantes: " + contador);
         System.out.println("Promedio grupal: " + promedioGrupal);
+    }}
+    
+    public int getTotalEstudiantes(){
+        
+    return lista.size();
+        
     }
+    
+    
 }
-}
+
